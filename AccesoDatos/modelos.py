@@ -1,6 +1,6 @@
 """Archivo para la administracion de los modelos en base de datos"""
 
-from DataAccess.db import session, base
+from AccesoDatos.db import session, base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 

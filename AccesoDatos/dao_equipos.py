@@ -2,9 +2,9 @@
     This class is a ConcreteProduct of the Factory pattern that is implemented
     in the factory file."""
 
-from Models import Equipo
-from DaoGeneral import DaoGeneral
-from db import session
+from .modelos import Equipo
+from .dao_general import DaoGeneral
+from .db import session
 
 
 class DaoEquipo(DaoGeneral):
@@ -15,7 +15,7 @@ class DaoEquipo(DaoGeneral):
     def crear(self, equipo: Equipo):
         self.session.add(equipo)
         self.session.commit()
-        print("The connection was correct")
+        return True
 
     def leer(self, id: int):
         consulta = self.session.query(Equipo).get(id)
