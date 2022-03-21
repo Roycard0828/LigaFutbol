@@ -23,7 +23,7 @@ class DaoEquipo(DaoGeneral):
 
     def leer_todos(self):
         consulta = self.session.query(Equipo).all()
-        return consulta;
+        return consulta
 
     def actualizar(self, equipo: Equipo, *args):
         equipo = self.session.query(Equipo).get(equipo.id)
@@ -33,7 +33,9 @@ class DaoEquipo(DaoGeneral):
 
         self.session.add(equipo)
         self.session.commit()
+        return True
 
     def borrar(self, equipo: Equipo):
         self.session.delete(equipo)
         self.session.commit()
+        return True

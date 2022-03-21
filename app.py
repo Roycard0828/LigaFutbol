@@ -1,4 +1,4 @@
-from Presentacion.InterfacesUI.ventana_principal import *
+from Presentacion.ventana_principal import *
 from Controller import controlador
 
 
