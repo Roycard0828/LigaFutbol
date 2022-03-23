@@ -26,6 +26,7 @@ class DaoEquipo(DaoGeneral):
         return consulta
 
     def actualizar(self, equipo: Equipo, *args):
+        print(args)
         equipo = self.session.query(Equipo).get(equipo.id)
         equipo.nombre = args[0]
         equipo.representante = args[1]

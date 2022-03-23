@@ -28,9 +28,11 @@ class EquiposController:
         """Metodo para actualizar equipos buscandolos antes"""
         dao = DaoEquipoFactory.create_entity()
         equipo = dao.leer(id)
-        datos = args
+        nombre = args[0]
+        representante = args[1]
+        campo = args[2]
         if equipo is not None:
-            dao.actualizar(equipo, datos)
+            dao.actualizar(equipo, nombre, representante, campo)
             return True
         else:
             return False
