@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1243</width>
-    <height>801</height>
+    <width>1284</width>
+    <height>841</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -237,7 +237,7 @@ QPushButton{
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2">
+                <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0">
                  <item>
                   <widget class="QFrame" name="TituloEquipos">
                    <property name="frameShape">
@@ -273,10 +273,10 @@ QPushButton{
                    <widget class="QFrame" name="ContEquipos">
                     <property name="geometry">
                      <rect>
-                      <x>0</x>
-                      <y>121</y>
-                      <width>1042</width>
-                      <height>561</height>
+                      <x>1</x>
+                      <y>100</y>
+                      <width>1081</width>
+                      <height>611</height>
                      </rect>
                     </property>
                     <property name="frameShape">
@@ -377,7 +377,7 @@ QPushButton:hover{
                       </rect>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">colo:black;</string>
+                      <string notr="true">color:black;</string>
                      </property>
                     </widget>
                     <widget class="QTextEdit" name="TxtRepresentanteEquipo">
@@ -472,6 +472,89 @@ QPushButton:hover{
                      </property>
                      <property name="text">
                       <string>Borrar</string>
+                     </property>
+                    </widget>
+                    <widget class="QTableWidget" name="tablaEquipos">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
+                     <property name="geometry">
+                      <rect>
+                       <x>20</x>
+                       <y>160</y>
+                       <width>861</width>
+                       <height>431</height>
+                      </rect>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:balck;</string>
+                     </property>
+                     <property name="rowCount">
+                      <number>0</number>
+                     </property>
+                     <attribute name="horizontalHeaderVisible">
+                      <bool>true</bool>
+                     </attribute>
+                     <attribute name="horizontalHeaderDefaultSectionSize">
+                      <number>220</number>
+                     </attribute>
+                     <column>
+                      <property name="text">
+                       <string>ID</string>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>9</pointsize>
+                       </font>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Nombre</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Representante</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Campo</string>
+                      </property>
+                     </column>
+                    </widget>
+                    <widget class="QPushButton" name="btnlistar">
+                     <property name="geometry">
+                      <rect>
+                       <x>930</x>
+                       <y>460</y>
+                       <width>91</width>
+                       <height>41</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>14</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Listar</string>
                      </property>
                     </widget>
                    </widget>

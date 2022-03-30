@@ -12,10 +12,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.BtnEquipo.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.PaginaEquipos))
         self.BtnTabla.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.PaginaTabla))
 
-        # ------ Metodos de equipos --------
+        # ------ Botones para los equipos equipos --------
         self.BtnInsertar.clicked.connect(lambda: self.insertar_datos_equipos())
         self.BtnActualizar.clicked.connect(lambda: self.actualizar_datos_equipos())
 
+    # --------Metodos para las operaciones con los equipos ----------
     def insertar_datos_equipos(self):
         nombre = str(self.TxtNombreEquipo.toPlainText())
         representante = str(self.TxtRepresentanteEquipo.toPlainText())

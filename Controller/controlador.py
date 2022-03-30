@@ -5,6 +5,7 @@ from AccesoDatos.modelos import Equipo
 
 
 class EquiposController:
+    """Clase encargada de conectar la capa de Presentacion con la capa de acceso a datos"""
 
     @classmethod
     def insertar_equipos(cls, nombre, representante, campo):

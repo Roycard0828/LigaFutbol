@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1243, 801)
+        MainWindow.resize(1284, 841)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -117,8 +117,8 @@ class Ui_MainWindow(object):
         self.PaginaEquipos = QtWidgets.QWidget()
         self.PaginaEquipos.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.PaginaEquipos.setObjectName("PaginaEquipos")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.PaginaEquipos)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.PaginaEquipos)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.TituloEquipos = QtWidgets.QFrame(self.PaginaEquipos)
         self.TituloEquipos.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.TituloEquipos.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
         self.label.setStyleSheet("color:gray;")
         self.label.setObjectName("label")
         self.ContEquipos = QtWidgets.QFrame(self.TituloEquipos)
-        self.ContEquipos.setGeometry(QtCore.QRect(0, 121, 1042, 561))
+        self.ContEquipos.setGeometry(QtCore.QRect(1, 100, 1081, 611))
         self.ContEquipos.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.ContEquipos.setFrameShadow(QtWidgets.QFrame.Raised)
         self.ContEquipos.setObjectName("ContEquipos")
@@ -172,7 +172,7 @@ class Ui_MainWindow(object):
         self.BtnInsertar.setObjectName("BtnInsertar")
         self.TxtNombreEquipo = QtWidgets.QTextEdit(self.ContEquipos)
         self.TxtNombreEquipo.setGeometry(QtCore.QRect(110, 60, 171, 31))
-        self.TxtNombreEquipo.setStyleSheet("colo:black;")
+        self.TxtNombreEquipo.setStyleSheet("color:black;")
         self.TxtNombreEquipo.setObjectName("TxtNombreEquipo")
         self.TxtRepresentanteEquipo = QtWidgets.QTextEdit(self.ContEquipos)
         self.TxtRepresentanteEquipo.setGeometry(QtCore.QRect(420, 60, 201, 31))
@@ -222,8 +222,46 @@ class Ui_MainWindow(object):
 "    color:black;\n"
 "}")
         self.BtnBorrar.setObjectName("BtnBorrar")
-        self.verticalLayout_3.addWidget(self.TituloEquipos)
-        self.verticalLayout_3.setStretch(0, 2)
+        self.tablaEquipos = QtWidgets.QTableWidget(self.ContEquipos)
+        self.tablaEquipos.setEnabled(True)
+        self.tablaEquipos.setGeometry(QtCore.QRect(20, 160, 861, 431))
+        self.tablaEquipos.setStyleSheet("color:balck;")
+        self.tablaEquipos.setRowCount(0)
+        self.tablaEquipos.setObjectName("tablaEquipos")
+        self.tablaEquipos.setColumnCount(4)
+        item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        item.setFont(font)
+        self.tablaEquipos.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaEquipos.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaEquipos.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaEquipos.setHorizontalHeaderItem(3, item)
+        self.tablaEquipos.horizontalHeader().setVisible(True)
+        self.tablaEquipos.horizontalHeader().setDefaultSectionSize(220)
+        self.btnlistar = QtWidgets.QPushButton(self.ContEquipos)
+        self.btnlistar.setGeometry(QtCore.QRect(930, 460, 91, 41))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnlistar.setFont(font)
+        self.btnlistar.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(120, 208, 9);\n"
+"    color:white;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:white;\n"
+"    border-color:black;\n"
+"    color:black;\n"
+"}")
+        self.btnlistar.setObjectName("btnlistar")
+        self.horizontalLayout_4.addWidget(self.TituloEquipos)
         self.stackedWidget.addWidget(self.PaginaEquipos)
         self.PaginaTabla = QtWidgets.QWidget()
         self.PaginaTabla.setStyleSheet("QFrame{\n"
@@ -282,6 +320,15 @@ class Ui_MainWindow(object):
         self.BtnInsertar.setText(_translate("MainWindow", "Insertar"))
         self.BtnActualizar.setText(_translate("MainWindow", "Actualizar"))
         self.BtnBorrar.setText(_translate("MainWindow", "Borrar"))
+        item = self.tablaEquipos.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "ID"))
+        item = self.tablaEquipos.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Nombre"))
+        item = self.tablaEquipos.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Representante"))
+        item = self.tablaEquipos.horizontalHeaderItem(3)
+        item.setText(_translate("MainWindow", "Campo"))
+        self.btnlistar.setText(_translate("MainWindow", "Listar"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt;\">Tabla General</span></p></body></html>"))
 
 
