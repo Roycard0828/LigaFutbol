@@ -37,3 +37,9 @@ class EquiposController:
             return True
         else:
             return False
+
+    @classmethod
+    def devolver_todos_equipos(cls):
+        dao = DaoEquipoFactory.create_entity()
+        equipos = list(dao.leer_todos())
+        return equipos
