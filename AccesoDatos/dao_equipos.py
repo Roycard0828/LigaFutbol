@@ -5,6 +5,7 @@
 from .modelos import Equipo
 from .dao_general import DaoGeneral
 from .db import session
+from sqlalchemy import desc
 
 
 class DaoEquipo(DaoGeneral):
@@ -22,11 +23,10 @@ class DaoEquipo(DaoGeneral):
         return consulta
 
     def leer_todos(self):
-        consulta = self.session.query(Equipo).all()
+        consulta = self.session.query(Equipo).order_by(Equipo.id.asc())
         return consulta
 
     def actualizar(self, equipo: Equipo, *args):
-        print(args)
         equipo = self.session.query(Equipo).get(equipo.id)
         equipo.nombre = args[0]
         equipo.representante = args[1]

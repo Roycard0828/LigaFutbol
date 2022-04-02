@@ -487,7 +487,11 @@ QPushButton:hover{
                       </rect>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color:balck;</string>
+                      <string notr="true">
+	color:balck;
+	font: 63 11pt &quot;Noto Sans Mono SemiBold&quot;;
+	text-align:center;
+	border-color_black</string>
                      </property>
                      <property name="rowCount">
                       <number>0</number>
