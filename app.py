@@ -1,7 +1,7 @@
 from Presentacion.ventana_principal import *
 from Presentacion.ventana_actualizar import *
 from Presentacion.mensaje_exitoso import *
-from Controller.controlador import EquiposController
+from Controladores.controlador_equipo import EquiposController
 from PyQt5 import Qt
 
 

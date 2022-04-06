@@ -3,7 +3,7 @@
 from AccesoDatos import db
 from AccesoDatos.fabrica_dao import DaoEquipoFactory, DaoPartidoFactory
 from AccesoDatos.modelos import Partido
-from Controller import controlador
+from Controladores import controlador_equipo
 
 
 def run():
