@@ -14,6 +14,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # ------Selecccionar paginas del 'StachWidget' segun los botones -----------
         self.BtnEquipo.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.PaginaEquipos))
         self.BtnTabla.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.PaginaTabla))
+        self.BtnJornada.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.PaginaJornada))
 
         # ------ Botones para los equipos equipos --------
         self.BtnInsertar.clicked.connect(lambda: self.insertar_datos_equipos())

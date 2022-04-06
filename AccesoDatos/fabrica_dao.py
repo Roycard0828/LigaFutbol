@@ -3,6 +3,7 @@
 
 from abc import ABC, abstractmethod
 from .dao_equipos import DaoEquipo
+from .dao_partidos import DaoPartido
 
 
 class EntityFactory(ABC):
@@ -19,3 +20,10 @@ class DaoEquipoFactory(EntityFactory):
     @classmethod
     def create_entity(cls) -> DaoEquipo:
         return DaoEquipo()
+
+
+class DaoPartidoFactory(EntityFactory):
+    """Esta clase sera el creador concreto de los equipos"""
+    @classmethod
+    def create_entity(cls):
+        return DaoPartido()
