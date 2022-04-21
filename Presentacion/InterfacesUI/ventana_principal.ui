@@ -627,7 +627,98 @@ QPushButton:hover{
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="PaginaJornada"/>
+               <widget class="QWidget" name="PaginaJornada">
+                <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,8">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QWidget" name="Titulo" native="true">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:white;</string>
+                   </property>
+                   <widget class="QLabel" name="label_6">
+                    <property name="geometry">
+                     <rect>
+                      <x>50</x>
+                      <y>50</y>
+                      <width>151</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:gray;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Jornada&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="Contenido_2" native="true">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:white;</string>
+                   </property>
+                   <widget class="QTableWidget" name="tableWidget">
+                    <property name="geometry">
+                     <rect>
+                      <x>30</x>
+                      <y>50</y>
+                      <width>1031</width>
+                      <height>192</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">	color:balck;
+	font: 63 11pt &quot;Noto Sans Mono SemiBold&quot;;
+	text-align:center;
+	border-color_black</string>
+                    </property>
+                    <column>
+                     <property name="text">
+                      <string>Local</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Visitante</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Campo</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Resultado</string>
+                     </property>
+                    </column>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>

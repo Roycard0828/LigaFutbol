@@ -9,9 +9,9 @@ class PartidosController:
 
     @classmethod
     def insertar_partido(cls, numero_jornada, id_equipo_local, id_equipo_visit, campo):
-        equipo = Partido(numero_jornada, id_equipo_local, id_equipo_visit, campo)
+        partido = Partido(numero_jornada, id_equipo_local, id_equipo_visit, campo)
         dao = DaoPartidoFactory.create_entity()
-        dao.guardar()
+        dao.guardar(partido)
 
     @classmethod
     def devolver_todos_partidos(cls):
