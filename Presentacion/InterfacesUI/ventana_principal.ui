@@ -646,8 +646,12 @@ QPushButton:hover{
                  </property>
                  <item>
                   <widget class="QWidget" name="Titulo" native="true">
+                   <property name="autoFillBackground">
+                    <bool>true</bool>
+                   </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color:white;</string>
+                    <string notr="true">background-color:white;
+border-color: rgb(125, 125, 125);</string>
                    </property>
                    <widget class="QLabel" name="TituloJornada">
                     <property name="geometry">
@@ -729,10 +733,10 @@ QPushButton:hover{
                    <widget class="QTableWidget" name="TablaPartidos">
                     <property name="geometry">
                      <rect>
-                      <x>30</x>
-                      <y>50</y>
+                      <x>40</x>
+                      <y>110</y>
                       <width>1031</width>
-                      <height>192</height>
+                      <height>371</height>
                      </rect>
                     </property>
                     <property name="autoFillBackground">
@@ -786,21 +790,11 @@ QPushButton:hover{
                      </property>
                     </column>
                    </widget>
-                   <widget class="QSpinBox" name="spinBox">
+                   <widget class="QPushButton" name="BtnAsignarResultado">
                     <property name="geometry">
                      <rect>
-                      <x>220</x>
-                      <y>340</y>
-                      <width>52</width>
-                      <height>32</height>
-                     </rect>
-                    </property>
-                   </widget>
-                   <widget class="QPushButton" name="BtnAsignar">
-                    <property name="geometry">
-                     <rect>
-                      <x>940</x>
-                      <y>440</y>
+                      <x>890</x>
+                      <y>50</y>
                       <width>88</width>
                       <height>34</height>
                      </rect>
@@ -828,6 +822,35 @@ QPushButton:hover{
                     </property>
                     <property name="text">
                      <string>Asignar</string>
+                    </property>
+                   </widget>
+                   <widget class="QTextEdit" name="TxtResultado">
+                    <property name="geometry">
+                     <rect>
+                      <x>690</x>
+                      <y>50</y>
+                      <width>151</width>
+                      <height>31</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="label_6">
+                    <property name="geometry">
+                     <rect>
+                      <x>560</x>
+                      <y>50</y>
+                      <width>101</width>
+                      <height>31</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Resultado: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </widget>
