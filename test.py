@@ -21,10 +21,12 @@ def run():
     # lista = dao.leer_todos()
     # partido = Partido(1, equipo_local.id, equipo_visitante.id , "Bernabeu")
     # dao_partido = DaoPartidoFactory().create_entity()
+    # consulta = dao_partido.leer_por_jornada(1)
+    # print(consulta[0].equipo_local.nombre)
     # dao_partido.guardar(partido)
     # partido = dao_partido.leer(2)
     # print(partido.equipo_local.nombre)
-    generar_calendario()
+    # generar_calendario()
 
 
 if __name__ == '__main__':

@@ -17,6 +17,12 @@ class DaoPartido(DaoGeneral):
         consulta = self.session.query(Partido).get(id)
         return consulta
 
+    def leer_por_jornada(self, numero_jornada: int):
+        consulta = self.session.query(Partido).filter(
+            Partido.numerojornada == numero_jornada
+        )
+        return consulta
+
     def leer_todos(self):
         pass
 
