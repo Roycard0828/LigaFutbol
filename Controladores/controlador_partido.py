@@ -18,3 +18,9 @@ class PartidosController:
         dao = DaoPartidoFactory.create_entity()
         lista_partidos = list(dao.leer_todos())
         return lista_partidos
+
+    @classmethod
+    def devolver_partido_por_numerojornada(cls, numerojornada):
+        dao = DaoPartidoFactory.create_entity()
+        lista_partidos = list(dao.leer_por_jornada(numerojornada))
+        return lista_partidos

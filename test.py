@@ -8,8 +8,7 @@ from LogicaNegocio.jornadas import generar_calendario
 
 
 def run():
-
-
+    pass
     # real = Equipo("Atletico de Madrid", "XXXXXX", "Wanda")
     # dao_equipo = DaoEquipoFactory().create_entity()
     # dao_equipo.crear(real)

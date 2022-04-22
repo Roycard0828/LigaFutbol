@@ -2,6 +2,7 @@ from Presentacion.ventana_principal import *
 from Presentacion.ventana_actualizar import *
 from Presentacion.mensaje_exitoso import *
 from Controladores.controlador_equipo import EquiposController
+from Controladores.controlador_partido import PartidosController
 from PyQt5 import Qt
 
 
@@ -22,6 +23,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btnlistar.clicked.connect(lambda: self.cargar_tabla_equipos())
         self.BtnBorrar.clicked.connect(lambda: self.borrar_equipos())
 
+        # Botones para los partidos
+        self.BtnBuscarJornada.clicked.connect(lambda: self.cargar_tabla_partidos())
     # Metodos generales
     def boton_mensaje_exitoso(self):
         self.mensaje_exitoso = Ui_Dialog()
@@ -29,7 +32,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.widget.show()
         self.mensaje_exitoso.pushButton.clicked.connect(lambda: self.widget.close())
 
-    # --------Metodos para las operaciones con los equipos ----------
+    # Metodos para las operaciones con los equipos
     def insertar_datos_equipos(self):
         nombre = str(self.TxtNombreEquipo.toPlainText())
         representante = str(self.TxtRepresentanteEquipo.toPlainText())
@@ -71,6 +74,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.tablaEquipos.setItem(row, 3, QtWidgets.QTableWidgetItem(equipos[i].campo))
 
         self.tablaEquipos.sortItems(0)
+
+    # Metodos para las operaciones con los partidos
+    def cargar_tabla_partidos(self):
+        numerojornada = int(self.NumJornada.text())
+        lista_partidos = PartidosController.devolver_partido_por_numerojornada(numerojornada)
+        self.TablaPartidos.setRowCount(len(lista_partidos))
+        for i in range(0, len(lista_partidos)):
+            self.TablaPartidos.setItem(i, 0, QtWidgets.QTableWidgetItem(lista_partidos[i].equipo_local.nombre))
+            self.TablaPartidos.setItem(i, 1, QtWidgets.QTableWidgetItem(lista_partidos[i].equipo_visit.nombre))
+            self.TablaPartidos.setItem(i, 2, QtWidgets.QTableWidgetItem(lista_partidos[i].campo))
+            self.TablaPartidos.setItem(i, 3, QtWidgets.QTableWidgetItem(lista_partidos[i].resultado))
 
 
 if __name__ == "__main__":
