@@ -25,6 +25,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # Botones para los partidos
         self.BtnBuscarJornada.clicked.connect(lambda: self.cargar_tabla_partidos())
+        self.BtnAsignarResultado.clicked.connect(lambda: self.asignar_resultados())
+        self.BtnActualizarDatos.clicked.connect(lambda: self.actualizar_resultados())
+
     # Metodos generales
     def boton_mensaje_exitoso(self):
         self.mensaje_exitoso = Ui_Dialog()
@@ -47,6 +50,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.boton_mensaje_exitoso()
 
     def actualizar_datos_equipos(self):
+        # Actualizar eqipos seleccionando la columna ID
         id = int(self.tablaEquipos.currentItem().text())
         self.actualizar_widget = Ui_ActualizarWIndow()
         self.actualizar_widget.setupUi(self.widget)
@@ -85,6 +89,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.TablaPartidos.setItem(i, 1, QtWidgets.QTableWidgetItem(lista_partidos[i].equipo_visit.nombre))
             self.TablaPartidos.setItem(i, 2, QtWidgets.QTableWidgetItem(lista_partidos[i].campo))
             self.TablaPartidos.setItem(i, 3, QtWidgets.QTableWidgetItem(lista_partidos[i].resultado))
+
+    def asignar_resultados(self):
+        resultado = self.TxtResultado.toPlainText()
+        self.TablaPartidos.currentItem().setText(resultado)
+
+    def actualizar_resultados(self):
+        # Actualizar el resultado de los partidos segun su id y el resultado asignado
+        numero_jornada = int(self.NumJornada.text())
+        lista_partidos = PartidosController.devolver_partido_por_numerojornada(numero_jornada)
+        numero_partidos = len(lista_partidos)
+        for i in range(0, numero_partidos):
+            id = lista_partidos[i].id
+            resultado = self.TablaPartidos.item(i, 3).text()
+            PartidosController.actualizar_resultados(id, resultado)
 
 
 if __name__ == "__main__":

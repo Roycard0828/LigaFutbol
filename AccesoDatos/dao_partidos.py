@@ -23,6 +23,14 @@ class DaoPartido(DaoGeneral):
         )
         return consulta
 
+    def actualizar_resultado(self, id, resultado):
+        partido = self.session.query(Partido).get(id)
+        partido.resultado = resultado
+
+        self.session.add(partido)
+        self.session.commit()
+        return True
+
     def leer_todos(self):
         pass
 

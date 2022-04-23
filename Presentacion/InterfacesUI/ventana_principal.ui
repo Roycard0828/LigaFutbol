@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1300</width>
-    <height>757</height>
+    <height>846</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -679,7 +679,7 @@ border-color: rgb(125, 125, 125);</string>
                    <widget class="QPushButton" name="BtnBuscarJornada">
                     <property name="geometry">
                      <rect>
-                      <x>930</x>
+                      <x>980</x>
                       <y>60</y>
                       <width>91</width>
                       <height>41</height>
@@ -713,7 +713,7 @@ QPushButton:hover{
                    <widget class="QSpinBox" name="NumJornada">
                     <property name="geometry">
                      <rect>
-                      <x>800</x>
+                      <x>830</x>
                       <y>60</y>
                       <width>71</width>
                       <height>41</height>
@@ -793,7 +793,7 @@ QPushButton:hover{
                    <widget class="QPushButton" name="BtnAsignarResultado">
                     <property name="geometry">
                      <rect>
-                      <x>890</x>
+                      <x>980</x>
                       <y>50</y>
                       <width>88</width>
                       <height>34</height>
@@ -827,7 +827,7 @@ QPushButton:hover{
                    <widget class="QTextEdit" name="TxtResultado">
                     <property name="geometry">
                      <rect>
-                      <x>690</x>
+                      <x>770</x>
                       <y>50</y>
                       <width>151</width>
                       <height>31</height>
@@ -840,7 +840,7 @@ QPushButton:hover{
                    <widget class="QLabel" name="label_6">
                     <property name="geometry">
                      <rect>
-                      <x>560</x>
+                      <x>640</x>
                       <y>50</y>
                       <width>101</width>
                       <height>31</height>
@@ -851,6 +851,40 @@ QPushButton:hover{
                     </property>
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Resultado: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                   <widget class="QPushButton" name="BtnActualizarDatos">
+                    <property name="geometry">
+                     <rect>
+                      <x>870</x>
+                      <y>510</y>
+                      <width>201</width>
+                      <height>41</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgb(120, 208, 9);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Actualizar datos</string>
                     </property>
                    </widget>
                   </widget>

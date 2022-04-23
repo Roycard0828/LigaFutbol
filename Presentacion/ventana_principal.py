@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1300, 757)
+        MainWindow.resize(1300, 846)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -315,7 +315,7 @@ class Ui_MainWindow(object):
         self.TituloJornada.setStyleSheet("color:gray;")
         self.TituloJornada.setObjectName("TituloJornada")
         self.BtnBuscarJornada = QtWidgets.QPushButton(self.Titulo)
-        self.BtnBuscarJornada.setGeometry(QtCore.QRect(930, 60, 91, 41))
+        self.BtnBuscarJornada.setGeometry(QtCore.QRect(980, 60, 91, 41))
         font = QtGui.QFont()
         font.setFamily("Noto Sans Mono SemiBold")
         font.setPointSize(12)
@@ -335,7 +335,7 @@ class Ui_MainWindow(object):
 "}")
         self.BtnBuscarJornada.setObjectName("BtnBuscarJornada")
         self.NumJornada = QtWidgets.QSpinBox(self.Titulo)
-        self.NumJornada.setGeometry(QtCore.QRect(800, 60, 71, 41))
+        self.NumJornada.setGeometry(QtCore.QRect(830, 60, 71, 41))
         self.NumJornada.setStyleSheet("color:black;")
         self.NumJornada.setObjectName("NumJornada")
         self.verticalLayout_3.addWidget(self.Titulo)
@@ -362,18 +362,18 @@ class Ui_MainWindow(object):
         self.TablaPartidos.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.TablaPartidos.setHorizontalHeaderItem(3, item)
-        self.TablaPartidos.horizontalHeader().setVisible(True)
-        self.TablaPartidos.horizontalHeader().setCascadingSectionResizes(False)
-        self.TablaPartidos.horizontalHeader().setHighlightSections(True)
-        self.TablaPartidos.horizontalHeader().setSortIndicatorShown(True)
-        self.TablaPartidos.verticalHeader().setVisible(True)
         # Tamaños para las columnas de la tabla partidos
         self.TablaPartidos.setColumnWidth(0, 250)
         self.TablaPartidos.setColumnWidth(1, 250)
         self.TablaPartidos.setColumnWidth(2, 250)
         self.TablaPartidos.setColumnWidth(3, 279)
+        self.TablaPartidos.horizontalHeader().setVisible(True)
+        self.TablaPartidos.horizontalHeader().setCascadingSectionResizes(False)
+        self.TablaPartidos.horizontalHeader().setHighlightSections(True)
+        self.TablaPartidos.horizontalHeader().setSortIndicatorShown(True)
+        self.TablaPartidos.verticalHeader().setVisible(True)
         self.BtnAsignarResultado = QtWidgets.QPushButton(self.ContJornada)
-        self.BtnAsignarResultado.setGeometry(QtCore.QRect(890, 50, 88, 34))
+        self.BtnAsignarResultado.setGeometry(QtCore.QRect(980, 50, 88, 34))
         font = QtGui.QFont()
         font.setFamily("Noto Sans Mono SemiBold")
         font.setPointSize(12)
@@ -393,13 +393,33 @@ class Ui_MainWindow(object):
 "}")
         self.BtnAsignarResultado.setObjectName("BtnAsignarResultado")
         self.TxtResultado = QtWidgets.QTextEdit(self.ContJornada)
-        self.TxtResultado.setGeometry(QtCore.QRect(690, 50, 151, 31))
+        self.TxtResultado.setGeometry(QtCore.QRect(770, 50, 151, 31))
         self.TxtResultado.setStyleSheet("color:black;")
         self.TxtResultado.setObjectName("TxtResultado")
         self.label_6 = QtWidgets.QLabel(self.ContJornada)
-        self.label_6.setGeometry(QtCore.QRect(560, 50, 101, 31))
+        self.label_6.setGeometry(QtCore.QRect(640, 50, 101, 31))
         self.label_6.setStyleSheet("color:black;")
         self.label_6.setObjectName("label_6")
+        self.BtnActualizarDatos = QtWidgets.QPushButton(self.ContJornada)
+        self.BtnActualizarDatos.setGeometry(QtCore.QRect(870, 510, 201, 41))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans Mono SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.BtnActualizarDatos.setFont(font)
+        self.BtnActualizarDatos.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(120, 208, 9);\n"
+"    color:white;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:white;\n"
+"    border-color:black;\n"
+"    color:black;\n"
+"}")
+        self.BtnActualizarDatos.setObjectName("BtnActualizarDatos")
         self.verticalLayout_3.addWidget(self.ContJornada)
         self.verticalLayout_3.setStretch(0, 2)
         self.verticalLayout_3.setStretch(1, 8)
@@ -453,6 +473,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Resultado"))
         self.BtnAsignarResultado.setText(_translate("MainWindow", "Asignar"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Resultado: </span></p></body></html>"))
+        self.BtnActualizarDatos.setText(_translate("MainWindow", "Actualizar datos"))
 
 
 if __name__ == "__main__":
