@@ -8,7 +8,7 @@ class DaoGeneral(ABC):
         Esta clase es un Producto del patron factory implementado en el archivo Fabrica.py."""
 
     @abstractmethod
-    def crear(self, pojo):
+    def guardar(self, pojo):
         pass
 
     @abstractmethod

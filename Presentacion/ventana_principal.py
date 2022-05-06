@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1284, 841)
+        MainWindow.resize(1300, 846)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -244,7 +244,7 @@ class Ui_MainWindow(object):
         self.tablaEquipos.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaEquipos.setHorizontalHeaderItem(3, item)
-        self.tablaEquipos.horizontalHeader().setVisible(True)
+        self.tablaEquipos.horizontalHeader().setVisible(False)
         self.tablaEquipos.horizontalHeader().setDefaultSectionSize(220)
         self.btnlistar = QtWidgets.QPushButton(self.ContEquipos)
         self.btnlistar.setGeometry(QtCore.QRect(930, 460, 91, 41))
@@ -296,6 +296,133 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.PaginaTabla)
         self.PaginaJornada = QtWidgets.QWidget()
         self.PaginaJornada.setObjectName("PaginaJornada")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.PaginaJornada)
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.Titulo = QtWidgets.QWidget(self.PaginaJornada)
+        self.Titulo.setAutoFillBackground(True)
+        self.Titulo.setStyleSheet("background-color:white;\n"
+"border-color: rgb(125, 125, 125);")
+        self.Titulo.setObjectName("Titulo")
+        self.TituloJornada = QtWidgets.QLabel(self.Titulo)
+        self.TituloJornada.setGeometry(QtCore.QRect(50, 50, 151, 51))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans Mono SemiBold")
+        font.setBold(True)
+        font.setWeight(75)
+        self.TituloJornada.setFont(font)
+        self.TituloJornada.setStyleSheet("color:gray;")
+        self.TituloJornada.setObjectName("TituloJornada")
+        self.BtnBuscarJornada = QtWidgets.QPushButton(self.Titulo)
+        self.BtnBuscarJornada.setGeometry(QtCore.QRect(980, 60, 91, 41))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans Mono SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.BtnBuscarJornada.setFont(font)
+        self.BtnBuscarJornada.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(120, 208, 9);\n"
+"    color:white;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:white;\n"
+"    border-color:black;\n"
+"    color:black;\n"
+"}")
+        self.BtnBuscarJornada.setObjectName("BtnBuscarJornada")
+        self.NumJornada = QtWidgets.QSpinBox(self.Titulo)
+        self.NumJornada.setGeometry(QtCore.QRect(830, 60, 71, 41))
+        self.NumJornada.setStyleSheet("color:black;")
+        self.NumJornada.setObjectName("NumJornada")
+        self.verticalLayout_3.addWidget(self.Titulo)
+        self.ContJornada = QtWidgets.QWidget(self.PaginaJornada)
+        self.ContJornada.setStyleSheet("background-color:white;")
+        self.ContJornada.setObjectName("ContJornada")
+        self.TablaPartidos = QtWidgets.QTableWidget(self.ContJornada)
+        self.TablaPartidos.setGeometry(QtCore.QRect(40, 110, 1031, 371))
+        self.TablaPartidos.setAutoFillBackground(False)
+        self.TablaPartidos.setStyleSheet("    color:balck;\n"
+"    font: 63 11pt \"Noto Sans Mono SemiBold\";\n"
+"    text-align:center;\n"
+"    border-color_black")
+        self.TablaPartidos.setShowGrid(True)
+        self.TablaPartidos.setWordWrap(True)
+        self.TablaPartidos.setObjectName("TablaPartidos")
+        self.TablaPartidos.setColumnCount(4)
+        self.TablaPartidos.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaPartidos.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaPartidos.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaPartidos.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaPartidos.setHorizontalHeaderItem(3, item)
+        # Tamaños para las columnas de la tabla partidos
+        self.TablaPartidos.setColumnWidth(0, 250)
+        self.TablaPartidos.setColumnWidth(1, 250)
+        self.TablaPartidos.setColumnWidth(2, 250)
+        self.TablaPartidos.setColumnWidth(3, 279)
+        self.TablaPartidos.horizontalHeader().setVisible(True)
+        self.TablaPartidos.horizontalHeader().setCascadingSectionResizes(False)
+        self.TablaPartidos.horizontalHeader().setHighlightSections(True)
+        self.TablaPartidos.horizontalHeader().setSortIndicatorShown(True)
+        self.TablaPartidos.verticalHeader().setVisible(True)
+        self.BtnAsignarResultado = QtWidgets.QPushButton(self.ContJornada)
+        self.BtnAsignarResultado.setGeometry(QtCore.QRect(980, 50, 88, 34))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans Mono SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.BtnAsignarResultado.setFont(font)
+        self.BtnAsignarResultado.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(120, 208, 9);\n"
+"    color:white;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:white;\n"
+"    border-color:black;\n"
+"    color:black;\n"
+"}")
+        self.BtnAsignarResultado.setObjectName("BtnAsignarResultado")
+        self.TxtResultado = QtWidgets.QTextEdit(self.ContJornada)
+        self.TxtResultado.setGeometry(QtCore.QRect(770, 50, 151, 31))
+        self.TxtResultado.setStyleSheet("color:black;")
+        self.TxtResultado.setObjectName("TxtResultado")
+        self.label_6 = QtWidgets.QLabel(self.ContJornada)
+        self.label_6.setGeometry(QtCore.QRect(640, 50, 101, 31))
+        self.label_6.setStyleSheet("color:black;")
+        self.label_6.setObjectName("label_6")
+        self.BtnActualizarDatos = QtWidgets.QPushButton(self.ContJornada)
+        self.BtnActualizarDatos.setGeometry(QtCore.QRect(870, 510, 201, 41))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans Mono SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.BtnActualizarDatos.setFont(font)
+        self.BtnActualizarDatos.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(120, 208, 9);\n"
+"    color:white;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:white;\n"
+"    border-color:black;\n"
+"    color:black;\n"
+"}")
+        self.BtnActualizarDatos.setObjectName("BtnActualizarDatos")
+        self.verticalLayout_3.addWidget(self.ContJornada)
+        self.verticalLayout_3.setStretch(0, 2)
+        self.verticalLayout_3.setStretch(1, 8)
         self.stackedWidget.addWidget(self.PaginaJornada)
         self.verticalLayout_2.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.Contenido)
@@ -307,7 +434,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -334,6 +461,19 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Campo"))
         self.btnlistar.setText(_translate("MainWindow", "Listar"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt;\">Tabla General</span></p></body></html>"))
+        self.TituloJornada.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">Jornada</span></p></body></html>"))
+        self.BtnBuscarJornada.setText(_translate("MainWindow", "Buscar"))
+        item = self.TablaPartidos.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Local"))
+        item = self.TablaPartidos.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Visitante"))
+        item = self.TablaPartidos.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Campo"))
+        item = self.TablaPartidos.horizontalHeaderItem(3)
+        item.setText(_translate("MainWindow", "Resultado"))
+        self.BtnAsignarResultado.setText(_translate("MainWindow", "Asignar"))
+        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Resultado: </span></p></body></html>"))
+        self.BtnActualizarDatos.setText(_translate("MainWindow", "Actualizar datos"))
 
 
 if __name__ == "__main__":

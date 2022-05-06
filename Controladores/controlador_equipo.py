@@ -11,7 +11,7 @@ class EquiposController:
     def insertar_equipos(cls, nombre, representante, campo):
         dao = DaoEquipoFactory.create_entity()
         equipo = Equipo(nombre, representante, campo)
-        dao.crear(equipo)
+        dao.guardar(equipo)
 
     @classmethod
     def borrar_equipos(cls, id):
@@ -41,5 +41,5 @@ class EquiposController:
     @classmethod
     def devolver_todos_equipos(cls):
         dao = DaoEquipoFactory.create_entity()
-        equipos = list(dao.leer_todos())
-        return equipos
+        lista_equipos = list(dao.leer_todos())
+        return lista_equipos

@@ -20,3 +20,21 @@ class Equipo(base):
         self.representante = representante
         self.campo = campo
 
+
+class Partido(base):
+    __tablename__ = "partido"
+    id = Column(Integer, primary_key=True)
+    numerojornada = Column(Integer)
+    equipo_local_id = Column(Integer, ForeignKey('equipo.id'))
+    equipo_visit_id = Column(Integer, ForeignKey('equipo.id'))
+    campo = Column(String)
+    resultado = Column(String, default="Sin resultado")
+    # Relaciones
+    equipo_local = relationship('Equipo', foreign_keys=[equipo_local_id])
+    equipo_visit = relationship('Equipo', foreign_keys=[equipo_visit_id])
+
+    def __init__(self, numerojornada, equipo_local_id: int, equipo_visitante_id: int, campo):
+        self.numerojornada = numerojornada
+        self.equipo_local_id = equipo_local_id
+        self.equipo_visit_id = equipo_visitante_id
+        self.campo = campo

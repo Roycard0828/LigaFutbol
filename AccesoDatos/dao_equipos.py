@@ -13,7 +13,7 @@ class DaoEquipo(DaoGeneral):
     def __init__(self):
         self.session = session
 
-    def crear(self, equipo: Equipo):
+    def guardar(self, equipo: Equipo):
         self.session.add(equipo)
         self.session.commit()
         return True
