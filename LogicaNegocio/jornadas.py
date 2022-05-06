@@ -1,3 +1,4 @@
+"""Archivo pora general el calendario de jornadas segun los equipos inscritos"""""
 
 from Controladores.controlador_equipo import EquiposController
 from Controladores.controlador_partido import PartidosController
