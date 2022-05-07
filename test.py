@@ -1,10 +1,10 @@
 """Clase para ir probando las nuevas caracteristicas"""
 
 from AccesoDatos import db
-# from AccesoDatos.fabrica_dao import DaoEquipoFactory, DaoPartidoFactory
-# from AccesoDatos.modelos import Partido
+from AccesoDatos.fabrica_dao import DaoEquipoFactory, DaoPartidoFactory, DaoTablaGeneralFactory
+from AccesoDatos.modelos import Partido, TablaGeneral
 # from Controladores import controlador_equipo
-from LogicaNegocio.jornadas import generar_calendario
+# from LogicaNegocio.jornadas import generar_calendario
 
 
 def run():
@@ -26,6 +26,9 @@ def run():
     # partido = dao_partido.leer(2)
     # print(partido.equipo_local.nombre)
     # generar_calendario()
+    # dao_tabla = DaoTablaGeneralFactory.create_entity()
+    # consulta = dao_tabla.leer_equipo(1)
+    # print(consulta[0].equipo.nombre)
 
 
 if __name__ == '__main__':
