@@ -47,10 +47,11 @@ class TablaGeneral(base):
     partidosjugados = Column(Integer, default=0)
     partidosganados = Column(Integer, default=0)
     partidosperdidos = Column(Integer, default=0)
+    partidosempatados = Column(Integer, default=0)
     goles = Column(Integer, default=0)
     puntos = Column(Integer, default=0)
     # Relaciones
     equipo = relationship('Equipo')
 
-    def __init__(self, equipo_id):
-        self.equipo_id = equipo_id
+    def __init__(self, equipo: Equipo):
+        self.equipo = equipo

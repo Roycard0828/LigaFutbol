@@ -8,8 +8,8 @@ class DaoTablaGeneral:
     def __init__(self):
         self.session = session
 
-    def guardar(self, equipo: TablaGeneral):
-        self.session.add(equipo)
+    def guardar(self, equipo_tabla: TablaGeneral):
+        self.session.add(equipo_tabla)
         self.session.commit()
         return True
 
@@ -17,8 +17,8 @@ class DaoTablaGeneral:
         consulta = self.session.query(TablaGeneral).order_by(TablaGeneral.puntos.asc())
         return consulta
 
-    def leer_equipo(self, id_equipo):
+    def leer_equipo(self, id_equipo_tabla):
         consulta = self.session.query(TablaGeneral).filter(
-            TablaGeneral.equipo_id == id_equipo
+            TablaGeneral.equipo_id == id_equipo_tabla
         )
         return consulta

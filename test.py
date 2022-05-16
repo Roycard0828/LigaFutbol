@@ -2,7 +2,7 @@
 
 from AccesoDatos import db
 from AccesoDatos.fabrica_dao import DaoEquipoFactory, DaoPartidoFactory, DaoTablaGeneralFactory
-from AccesoDatos.modelos import Partido, TablaGeneral
+from AccesoDatos.modelos import Partido, TablaGeneral, Equipo
 # from Controladores import controlador_equipo
 # from LogicaNegocio.jornadas import generar_calendario
 
@@ -29,6 +29,11 @@ def run():
     # dao_tabla = DaoTablaGeneralFactory.create_entity()
     # consulta = dao_tabla.leer_equipo(1)
     # print(consulta[0].equipo.nombre)
+    # dao_equipos = DaoEquipoFactory.create_entity()
+    # equipo = dao_equipos.leer(1)
+    # equipo_uno = TablaGeneral(equipo)
+    # dao_tabla = DaoTablaGeneralFactory.create_entity()
+    # dao_tabla.guardar(equipo_uno)
 
 
 if __name__ == '__main__':
