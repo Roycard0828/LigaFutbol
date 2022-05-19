@@ -1,7 +1,11 @@
 from AccesoDatos.modelos import Partido
+from Controladores.controlador_tabla_general import TablaGeneralController
+from Controladores.controlador_partido import PartidosController
 
 
-def generar_informacion_por_partido(partido: Partido):
+def actualizar_datos_equipos_en_tabla(partido: Partido):
+    """ Genera informacion para los equipos con base al partido jugado y hace
+        una actualizacion en base de datos."""
     equipo_local = partido.equipo_local.id
     equipo_visitante = partido.equipo_visit.id
     resultado = str(partido.resultado)
@@ -19,13 +23,13 @@ def generar_informacion_por_partido(partido: Partido):
                           'partido_ganado': 0,
                           'partido_perdido': 0,
                           'partido_empatado': 0,
-                          'goles': goles_local,
+                          'goles': int(goles_local),
                           'puntos': 0}
     datos_equipo_visitante = {'equipo_id': equipo_visitante,
                               'partido_ganado': 0,
                               'partido_perdido': 0,
                               'partido_empatado': 0,
-                              'goles': goles_visitante,
+                              'goles': int(goles_visitante),
                               'puntos': 0}
 
     if goles_local > goles_visitante:
@@ -45,6 +49,18 @@ def generar_informacion_por_partido(partido: Partido):
         datos_equipo_visitante['puntos'] = 1
         datos_equipo_visitante['partido_empatado'] = 1
 
-    lista_resultados = [datos_equipo_local, datos_equipo_visitante]
-    return lista_resultados
+    TablaGeneralController.actualizar_puntos_equipos(datos_equipo_local, datos_equipo_visitante)
+
+
+def terminar_jornada(numero_jornada: int):
+    """ Reune los partidos jugados por jornada y actualiza los
+        datos de los equipos participantes en la tabla general
+        del torneo """
+    partidos = PartidosController.devolver_partido_por_numerojornada(numero_jornada)
+    for partido in partidos:
+        actualizar_datos_equipos_en_tabla(partido)
+
+
+def iniciar_torneo():
+    TablaGeneralController.registrar_equipos()
 

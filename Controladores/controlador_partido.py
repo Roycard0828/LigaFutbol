@@ -29,3 +29,9 @@ class PartidosController:
     def actualizar_resultados(cls, id: int, resultado: str):
         dao = DaoPartidoFactory.create_entity()
         dao.actualizar_resultado(id, resultado)
+
+    @classmethod
+    def devolver_un_partido(cls, id: int):
+        dao = DaoPartidoFactory.create_entity()
+        consulta = dao.leer(id)
+        return consulta

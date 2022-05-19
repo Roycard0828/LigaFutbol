@@ -17,8 +17,13 @@ class DaoTablaGeneral:
         consulta = self.session.query(TablaGeneral).order_by(TablaGeneral.puntos.asc())
         return consulta
 
-    def leer_equipo(self, id_equipo_tabla):
+    def leer_equipo(self, id_equipo_tabla: int):
         consulta = self.session.query(TablaGeneral).filter(
             TablaGeneral.equipo_id == id_equipo_tabla
         )
         return consulta
+
+    def actualizar_datos_equipo(self, equipo_tabla_general: TablaGeneral):
+        self.session.add(equipo_tabla_general)
+        self.session.commit()
+        return True
