@@ -38,3 +38,20 @@ class Partido(base):
         self.equipo_local_id = equipo_local_id
         self.equipo_visit_id = equipo_visitante_id
         self.campo = campo
+
+
+class TablaGeneral(base):
+    __tablename__ = "tablageneral"
+    id = Column(Integer, primary_key=True)
+    equipo_id = Column(Integer, ForeignKey('equipo.id'))
+    partidosjugados = Column(Integer, default=0)
+    partidosganados = Column(Integer, default=0)
+    partidosperdidos = Column(Integer, default=0)
+    partidosempatados = Column(Integer, default=0)
+    goles = Column(Integer, default=0)
+    puntos = Column(Integer, default=0)
+    # Relaciones
+    equipo = relationship('Equipo')
+
+    def __init__(self, equipo: Equipo):
+        self.equipo = equipo

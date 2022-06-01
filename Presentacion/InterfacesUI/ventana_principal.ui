@@ -336,8 +336,8 @@ QPushButton{
                     <widget class="QPushButton" name="BtnInsertar">
                      <property name="geometry">
                       <rect>
-                       <x>920</x>
-                       <y>40</y>
+                       <x>940</x>
+                       <y>50</y>
                        <width>101</width>
                        <height>51</height>
                       </rect>
@@ -409,8 +409,8 @@ QPushButton:hover{
                     <widget class="QPushButton" name="BtnActualizar">
                      <property name="geometry">
                       <rect>
-                       <x>910</x>
-                       <y>180</y>
+                       <x>930</x>
+                       <y>220</y>
                        <width>121</width>
                        <height>51</height>
                       </rect>
@@ -443,7 +443,7 @@ QPushButton:hover{
                     <widget class="QPushButton" name="BtnBorrar">
                      <property name="geometry">
                       <rect>
-                       <x>920</x>
+                       <x>940</x>
                        <y>310</y>
                        <width>101</width>
                        <height>41</height>
@@ -531,8 +531,8 @@ QPushButton:hover{
                     <widget class="QPushButton" name="btnlistar">
                      <property name="geometry">
                       <rect>
-                       <x>930</x>
-                       <y>460</y>
+                       <x>950</x>
+                       <y>410</y>
                        <width>91</width>
                        <height>41</height>
                       </rect>
@@ -559,6 +559,40 @@ QPushButton:hover{
                      </property>
                      <property name="text">
                       <string>Listar</string>
+                     </property>
+                    </widget>
+                    <widget class="QPushButton" name="BtnEmpezarTorneo">
+                     <property name="geometry">
+                      <rect>
+                       <x>920</x>
+                       <y>510</y>
+                       <width>151</width>
+                       <height>51</height>
+                      </rect>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Noto Sans Mono SemiBold</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	background-color:  rgb(43, 98, 180);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Empezar Torneo</string>
                      </property>
                     </widget>
                    </widget>
@@ -623,6 +657,57 @@ QPushButton:hover{
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
+                   <widget class="QTableWidget" name="TablaGeneral">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>20</y>
+                      <width>1091</width>
+                      <height>551</height>
+                     </rect>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">	color:balck;
+	font: 63 11pt &quot;Noto Sans Mono SemiBold&quot;;
+	text-align:center;
+	border-color_black</string>
+                    </property>
+                    <column>
+                     <property name="text">
+                      <string>Equipo</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PJ</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PP</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PE</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>PG</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Goles</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Puntos</string>
+                     </property>
+                    </column>
+                   </widget>
                   </widget>
                  </item>
                 </layout>
@@ -647,7 +732,7 @@ QPushButton:hover{
                  <item>
                   <widget class="QWidget" name="Titulo" native="true">
                    <property name="autoFillBackground">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">background-color:white;
@@ -885,6 +970,41 @@ QPushButton:hover{
                     </property>
                     <property name="text">
                      <string>Actualizar datos</string>
+                    </property>
+                   </widget>
+                   <widget class="QPushButton" name="BtnTerminarJornada">
+                    <property name="geometry">
+                     <rect>
+                      <x>40</x>
+                      <y>513</y>
+                      <width>191</width>
+                      <height>51</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Noto Sans Mono SemiBold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	
+	background-color: rgb(43, 98, 180);
+	color:white;
+
+}
+
+QPushButton:hover{
+	background-color:white;
+	border-color:black;
+	color:black;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Terminar Jornada</string>
                     </property>
                    </widget>
                   </widget>

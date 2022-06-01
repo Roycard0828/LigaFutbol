@@ -151,7 +151,7 @@ class Ui_MainWindow(object):
         self.label_4.setStyleSheet("color:balck;")
         self.label_4.setObjectName("label_4")
         self.BtnInsertar = QtWidgets.QPushButton(self.ContEquipos)
-        self.BtnInsertar.setGeometry(QtCore.QRect(920, 40, 101, 51))
+        self.BtnInsertar.setGeometry(QtCore.QRect(940, 50, 101, 51))
         font = QtGui.QFont()
         font.setFamily("Noto Sans Mono SemiBold")
         font.setPointSize(12)
@@ -183,7 +183,7 @@ class Ui_MainWindow(object):
         self.TxtCampoEquipo.setStyleSheet("color:black;")
         self.TxtCampoEquipo.setObjectName("TxtCampoEquipo")
         self.BtnActualizar = QtWidgets.QPushButton(self.ContEquipos)
-        self.BtnActualizar.setGeometry(QtCore.QRect(910, 180, 121, 51))
+        self.BtnActualizar.setGeometry(QtCore.QRect(930, 220, 121, 51))
         font = QtGui.QFont()
         font.setFamily("Noto Sans Mono SemiBold")
         font.setPointSize(12)
@@ -203,7 +203,7 @@ class Ui_MainWindow(object):
 "}")
         self.BtnActualizar.setObjectName("BtnActualizar")
         self.BtnBorrar = QtWidgets.QPushButton(self.ContEquipos)
-        self.BtnBorrar.setGeometry(QtCore.QRect(920, 310, 101, 41))
+        self.BtnBorrar.setGeometry(QtCore.QRect(940, 310, 101, 41))
         font = QtGui.QFont()
         font.setFamily("Noto Sans Mono SemiBold")
         font.setPointSize(12)
@@ -247,7 +247,7 @@ class Ui_MainWindow(object):
         self.tablaEquipos.horizontalHeader().setVisible(False)
         self.tablaEquipos.horizontalHeader().setDefaultSectionSize(220)
         self.btnlistar = QtWidgets.QPushButton(self.ContEquipos)
-        self.btnlistar.setGeometry(QtCore.QRect(930, 460, 91, 41))
+        self.btnlistar.setGeometry(QtCore.QRect(950, 410, 91, 41))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
@@ -265,6 +265,26 @@ class Ui_MainWindow(object):
 "    color:black;\n"
 "}")
         self.btnlistar.setObjectName("btnlistar")
+        self.BtnEmpezarTorneo = QtWidgets.QPushButton(self.ContEquipos)
+        self.BtnEmpezarTorneo.setGeometry(QtCore.QRect(920, 510, 151, 51))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans Mono SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.BtnEmpezarTorneo.setFont(font)
+        self.BtnEmpezarTorneo.setStyleSheet("QPushButton{\n"
+"    background-color:  rgb(43, 98, 180);\n"
+"    color:white;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:white;\n"
+"    border-color:black;\n"
+"    color:black;\n"
+"}")
+        self.BtnEmpezarTorneo.setObjectName("BtnEmpezarTorneo")
         self.horizontalLayout_4.addWidget(self.TituloEquipos)
         self.stackedWidget.addWidget(self.PaginaEquipos)
         self.PaginaTabla = QtWidgets.QWidget()
@@ -290,6 +310,38 @@ class Ui_MainWindow(object):
         self.ContenidoTabla.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.ContenidoTabla.setFrameShadow(QtWidgets.QFrame.Raised)
         self.ContenidoTabla.setObjectName("ContenidoTabla")
+        self.TablaGeneral = QtWidgets.QTableWidget(self.ContenidoTabla)
+        self.TablaGeneral.setGeometry(QtCore.QRect(10, 20, 1091, 551))
+        self.TablaGeneral.setStyleSheet("    color:balck;\n"
+"    font: 63 11pt \"Noto Sans Mono SemiBold\";\n"
+"    text-align:center;\n"
+"    border-color_black")
+        self.TablaGeneral.setObjectName("TablaGeneral")
+        self.TablaGeneral.setColumnCount(7)
+        self.TablaGeneral.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaGeneral.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaGeneral.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaGeneral.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaGeneral.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaGeneral.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaGeneral.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.TablaGeneral.setHorizontalHeaderItem(6, item)
+
+        self.TablaGeneral.setColumnWidth(0, 200)
+        self.TablaGeneral.setColumnWidth(1, 150)
+        self.TablaGeneral.setColumnWidth(2, 150)
+        self.TablaGeneral.setColumnWidth(3, 150)
+        self.TablaGeneral.setColumnWidth(4, 150)
+        self.TablaGeneral.setColumnWidth(6, 200)
+        self.TablaGeneral.setColumnWidth(7, 200)
+
         self.verticalLayout_4.addWidget(self.ContenidoTabla)
         self.verticalLayout_4.setStretch(0, 2)
         self.verticalLayout_4.setStretch(1, 8)
@@ -301,7 +353,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.Titulo = QtWidgets.QWidget(self.PaginaJornada)
-        self.Titulo.setAutoFillBackground(True)
+        self.Titulo.setAutoFillBackground(False)
         self.Titulo.setStyleSheet("background-color:white;\n"
 "border-color: rgb(125, 125, 125);")
         self.Titulo.setObjectName("Titulo")
@@ -420,6 +472,27 @@ class Ui_MainWindow(object):
 "    color:black;\n"
 "}")
         self.BtnActualizarDatos.setObjectName("BtnActualizarDatos")
+        self.BtnTerminarJornada = QtWidgets.QPushButton(self.ContJornada)
+        self.BtnTerminarJornada.setGeometry(QtCore.QRect(40, 513, 191, 51))
+        font = QtGui.QFont()
+        font.setFamily("Noto Sans Mono SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.BtnTerminarJornada.setFont(font)
+        self.BtnTerminarJornada.setStyleSheet("QPushButton{\n"
+"    \n"
+"    background-color: rgb(43, 98, 180);\n"
+"    color:white;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:white;\n"
+"    border-color:black;\n"
+"    color:black;\n"
+"}")
+        self.BtnTerminarJornada.setObjectName("BtnTerminarJornada")
         self.verticalLayout_3.addWidget(self.ContJornada)
         self.verticalLayout_3.setStretch(0, 2)
         self.verticalLayout_3.setStretch(1, 8)
@@ -460,7 +533,22 @@ class Ui_MainWindow(object):
         item = self.tablaEquipos.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Campo"))
         self.btnlistar.setText(_translate("MainWindow", "Listar"))
+        self.BtnEmpezarTorneo.setText(_translate("MainWindow", "Empezar Torneo"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt;\">Tabla General</span></p></body></html>"))
+        item = self.TablaGeneral.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Equipo"))
+        item = self.TablaGeneral.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "PJ"))
+        item = self.TablaGeneral.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "PP"))
+        item = self.TablaGeneral.horizontalHeaderItem(3)
+        item.setText(_translate("MainWindow", "PE"))
+        item = self.TablaGeneral.horizontalHeaderItem(4)
+        item.setText(_translate("MainWindow", "PG"))
+        item = self.TablaGeneral.horizontalHeaderItem(5)
+        item.setText(_translate("MainWindow", "Goles"))
+        item = self.TablaGeneral.horizontalHeaderItem(6)
+        item.setText(_translate("MainWindow", "Puntos"))
         self.TituloJornada.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt;\">Jornada</span></p></body></html>"))
         self.BtnBuscarJornada.setText(_translate("MainWindow", "Buscar"))
         item = self.TablaPartidos.horizontalHeaderItem(0)
@@ -474,6 +562,7 @@ class Ui_MainWindow(object):
         self.BtnAsignarResultado.setText(_translate("MainWindow", "Asignar"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Resultado: </span></p></body></html>"))
         self.BtnActualizarDatos.setText(_translate("MainWindow", "Actualizar datos"))
+        self.BtnTerminarJornada.setText(_translate("MainWindow", "Terminar Jornada"))
 
 
 if __name__ == "__main__":

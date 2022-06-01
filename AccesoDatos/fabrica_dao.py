@@ -4,6 +4,7 @@
 from abc import ABC, abstractmethod
 from .dao_equipos import DaoEquipo
 from .dao_partidos import DaoPartido
+from .dao_tabla_general import DaoTablaGeneral
 
 
 class EntityFactory(ABC):
@@ -23,7 +24,14 @@ class DaoEquipoFactory(EntityFactory):
 
 
 class DaoPartidoFactory(EntityFactory):
-    """Esta clase sera el creador concreto de los equipos"""
+    """Esta clase sera el creador concreto de los partidos"""
     @classmethod
     def create_entity(cls):
         return DaoPartido()
+
+
+class DaoTablaGeneralFactory():
+    """Esta clase es el creador concreto de la tabla general"""
+    @classmethod
+    def create_entity(cls):
+        return DaoTablaGeneral()
