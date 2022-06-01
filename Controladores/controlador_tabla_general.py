@@ -34,3 +34,9 @@ class TablaGeneralController:
         equipo_visitante.goles += datos_equipo_visitante['goles']
         equipo_visitante.puntos += datos_equipo_visitante['puntos']
         dao_tabla_general.actualizar_datos_equipo(equipo_visitante)
+
+    @classmethod
+    def leer_equipos(cls):
+        dao_tabla_general = DaoTablaGeneralFactory.create_entity()
+        lista_equipos = dao_tabla_general.leer_todos()
+        return list(lista_equipos)

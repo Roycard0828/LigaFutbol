@@ -5,7 +5,6 @@ from AccesoDatos.fabrica_dao import DaoEquipoFactory, DaoPartidoFactory, DaoTabl
 # from AccesoDatos.modelos import Partido, TablaGeneral, Equipo
 from Controladores.controlador_tabla_general import TablaGeneralController
 from Controladores.controlador_partido import PartidosController
-from LogicaNegocio.tabla_general import generar_informacion_por_partido
 
 
 def run():
@@ -36,8 +35,10 @@ def run():
     # dao_tabla = DaoTablaGeneralFactory.create_entity()
     # dao_tabla.guardar(equipo_uno)
     # TablaGeneralController.registrar_equipos()
-    partido = PartidosController.devolver_un_partido(91)
-    generar_informacion_por_partido(partido)
+    # partido = PartidosController.devolver_un_partido(91)
+    # generar_informacion_por_partido(partido)
+    dao = list(TablaGeneralController.leer_equipos())
+    print(dao[1].partidosjugados)
 
 
 if __name__ == '__main__':

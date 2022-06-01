@@ -14,7 +14,7 @@ class DaoTablaGeneral:
         return True
 
     def leer_todos(self):
-        consulta = self.session.query(TablaGeneral).order_by(TablaGeneral.puntos.asc())
+        consulta = self.session.query(TablaGeneral).order_by(TablaGeneral.puntos.desc())
         return consulta
 
     def leer_equipo(self, id_equipo_tabla: int):

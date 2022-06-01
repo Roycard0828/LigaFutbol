@@ -3,6 +3,8 @@ from Presentacion.ventana_actualizar import *
 from Presentacion.mensaje_exitoso import *
 from Controladores.controlador_equipo import EquiposController
 from Controladores.controlador_partido import PartidosController
+from Controladores.controlador_tabla_general import TablaGeneralController
+from LogicaNegocio import tabla_general
 from PyQt5 import Qt
 
 
@@ -27,6 +29,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.BtnBuscarJornada.clicked.connect(lambda: self.cargar_tabla_partidos())
         self.BtnAsignarResultado.clicked.connect(lambda: self.asignar_resultados())
         self.BtnActualizarDatos.clicked.connect(lambda: self.actualizar_resultados())
+
+        # Botones para la tabla general
+        self.BtnEmpezarTorneo.clicked.connect(lambda: self.empezar_torneo())
+        self.BtnTerminarJornada.clicked.connect(lambda: self.terminar_jornada())
 
     # Metodos generales
     def boton_mensaje_exitoso(self):
@@ -103,6 +109,29 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             id = lista_partidos[i].id
             resultado = self.TablaPartidos.item(i, 3).text()
             PartidosController.actualizar_resultados(id, resultado)
+
+    def cargar_tabla_general(self):
+        lista_equipos = TablaGeneralController.leer_equipos()
+        self.TablaGeneral.setRowCount(len(lista_equipos))
+        for i in range(0, len(lista_equipos)):
+            self.TablaGeneral.setItem(i, 0, QtWidgets.QTableWidgetItem(lista_equipos[i].equipo.nombre))
+            self.TablaGeneral.setItem(i, 1, QtWidgets.QTableWidgetItem(str(lista_equipos[i].partidosjugados)))
+            self.TablaGeneral.setItem(i, 2, QtWidgets.QTableWidgetItem(str(lista_equipos[i].partidosperdidos)))
+            self.TablaGeneral.setItem(i, 3, QtWidgets.QTableWidgetItem(str(lista_equipos[i].partidosempatados)))
+            self.TablaGeneral.setItem(i, 4, QtWidgets.QTableWidgetItem(str(lista_equipos[i].partidosganados)))
+            self.TablaGeneral.setItem(i, 5, QtWidgets.QTableWidgetItem(str(lista_equipos[i].goles)))
+            self.TablaGeneral.setItem(i, 6, QtWidgets.QTableWidgetItem(str(lista_equipos[i].puntos)))
+
+    def empezar_torneo(self):
+        tabla_general.iniciar_torneo()
+        self.cargar_tabla_general()
+        self.boton_mensaje_exitoso()
+
+    def terminar_jornada(self):
+        numerojornada = int(self.NumJornada.text())
+        tabla_general.terminar_jornada(numerojornada)
+        self.cargar_tabla_general()
+        self.boton_mensaje_exitoso()
 
 
 if __name__ == "__main__":
