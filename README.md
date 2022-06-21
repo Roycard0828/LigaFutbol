@@ -9,8 +9,10 @@ de encuentros entre los diferentes equipos inscritos en la liga.
 Integrantes del proyecto:
 
 -Rodrigo Garcia Moctezuma.
+-Jimena Mota Basilio.
 -Itzel Rincon de la Luz.
-
+-Ignacio Varela Lucho.
+-Jose Jair Lopez Herrera.
 
 ### Herramientas ###
 Este proyecto sera creado en el lenguaje de programacion python3 mediante un entorno virtual. Con su libreria PYQT5 para el manejo
